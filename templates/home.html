@@ -1,0 +1,319 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid">
+    <!-- row-->
+    <div class="row border-bottom">
+        <div class="col-sm-3 ">
+            <div class="row mt-2">
+                <div class="col-auto">
+                    <label for="inputPassword6" class="col-form-label">
+                        Select An Image:
+                    </label>
+                </div>
+                <div class="col-8">
+                    <input class="form-control mt-1" type="file"
+                        id="formFile1" />
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 ">
+            <!-- main -->
+            <div class="overflow-auto">
+                <div class="card-body" style="height: 40rem;">
+                    <div class="row">
+                        <div class="col-4 my-2">
+                            <div class="form-check">
+                                <input class="form-check-input" name="chk"
+                                    type="checkbox" value id="idGrayscale">
+                                <label class="form-check-label"
+                                    for="idGrayscale">
+                                    Covert to Grayscale
+                                </label>
+                            </div>
+
+                        </div>
+                        <div class="col-3  my-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox"
+                                    name="chk" value id="idConvartToJpg">
+                                <label class="form-check-label"
+                                    for="flexCheckDefau" id="ConvartToJpg">
+                                    Convart to JPG
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-3 my-2">
+                            <!--  -->
+                            <div class="form-check">
+                                <input class="form-check-input" name="chk"
+                                    type="checkbox" value id="idSplitIntoYcbcr">
+                                <label class="form-check-label"
+                                    for="idSplitIntoYcbcr">
+                                    Split into YCbCr
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-3 my-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox"
+                                    value name="chk" id="idResize">
+                                <label class="form-check-label" for="idResize">
+                                    Resize
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-2 my-2">
+                            <input
+                                type="number"
+                                class="form-control form-control-sm"
+                                id="exampleFormControlInput1"
+                                placeholder="width=100" />
+                        </div>
+                        <div class="col-2 my-2">
+                            <input
+                                type="number"
+                                class="form-control form-control-sm"
+                                id="exampleFormControlInput1"
+                                placeholder="height=100" />
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-3 my-2">
+                            <div class="form-check">
+                                <input class="form-check-input" name="chk"
+                                    type="checkbox" value id="idRotateImage">
+                                <label class="form-check-label"
+                                    for="idRotateImage">
+                                    Rotate Image
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-2 my-2">
+                            <input
+                                type="number"
+                                class="form-control form-control-sm"
+                                id="exampleFormControlInput1"
+                                placeholder="angle=45" />
+                        </div>
+                        <div class="col-2 my-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox"
+                                    value name="chk" id="idClockwise">
+                                <label class="form-check-label"
+                                    for="idClockwise">
+                                    Clockwise
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-2 my-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox"
+                                    name="chk" value id="idSameSize">
+                                <label class="form-check-label"
+                                    for="idSameSize">
+                                    Same Size
+                                </label>
+                            </div>
+                        </div>
+                        <!-- <div class="col" style="border: 1px solid;">d</div> -->
+                    </div>
+
+                    <hr>
+                    <div class="row">
+                        <div class="col-3 my-2">
+                            <div class="form-check">
+                                <input class="form-check-input" name="chk"
+                                    type="checkbox" value
+                                    id="idMakeTransparent">
+                                <label class="form-check-label"
+                                    for="idMakeTransparent">
+                                    Make Transparent
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-2 my-2">
+                            <input
+                                type="number"
+                                class="form-control form-control-sm"
+                                id="exampleFormControlInput1"
+                                placeholder="red=255" />
+                        </div>
+                        <div class="col-2 my-2">
+                            <input
+                                type="number"
+                                class="form-control form-control-sm"
+                                id="exampleFormControlInput1"
+                                placeholder="green=25" />
+                        </div>
+                        <div class="col-2 my-2">
+                            <input
+                                type="number"
+                                class="form-control form-control-sm"
+                                id="exampleFormControlInput1"
+                                placeholder="blue=255" />
+                        </div>
+
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-3 my-2">
+                            <div class="form-check">
+                                <input class="form-check-input" name="chk"
+                                    type="checkbox" value id="idGaussianBlur">
+                                <label class="form-check-label"
+                                    for="idGaussianBlur">
+                                    Gaussian Blur
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-2 my-2">
+                            <input
+                                type="number"
+                                class="form-control form-control-sm"
+                                id="exampleFormControlInput1"
+                                placeholder="value=1" />
+                        </div>
+
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-3 my-2">
+                            <div class="form-check">
+                                <input class="form-check-input" name="chk"
+                                    type="checkbox" value id="idGaussianNoise">
+                                <label class="form-check-label"
+                                    for="idGaussianNoise">
+                                    Gaussian Noise
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-2 my-2">
+                            <input
+                                type="number"
+                                class="form-control form-control-sm"
+                                id="exampleFormControlInput1"
+                                placeholder="value=1" />
+                        </div>
+
+                        <hr>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-3 my-2">
+                            <div class="form-check">
+                                <input class="form-check-input" name="chk"
+                                    type="checkbox" value id="idSaltAndPepper">
+                                <label class="form-check-label"
+                                    for="idSaltAndPepper">
+                                    Salt And Pepper
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-2 my-2">
+                            <input
+                                type="number"
+                                class="form-control form-control-sm"
+                                id="exampleFormControlInput1"
+                                placeholder="salt=1" />
+                        </div>
+                        <div class="col-2 my-2">
+                            <input
+                                type="number"
+                                class="form-control form-control-sm"
+                                id="exampleFormControlInput1"
+                                placeholder="pepper=1" />
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-3 my-2">
+                            <div class="form-check">
+                                <input class="form-check-input" name="chk"
+                                    type="checkbox" value
+                                    id="idMedianFiltering">
+                                <label class="form-check-label"
+                                    for="idMedianFiltering">
+                                    Median Filtering
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-4 my-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox"
+                                    name="chk" value id="isSplitIntoRgb">
+                                <label class="form-check-label"
+                                    for="isSplitIntoRgb">
+                                    Split into RGB Channels
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-3 my-2"><div class="form-check">
+                                <input class="form-check-input" name="chk"
+                                    type="checkbox" value
+                                    id="idVectorQuantization">
+                                <label class="form-check-label"
+                                    for="idVectorQuantization">
+                                    Vector Quantization
+                                </label>
+                            </div></div>
+                        <div class="col-2 my-2">
+                            <input
+                                type="number"
+                                class="form-control form-control-sm"
+                                id="exampleFormControlInput1"
+                                placeholder="width=2" />
+                        </div>
+                        <div class="col-2 my-2">
+                            <input
+                                type="number"
+                                class="form-control form-control-sm"
+                                id="exampleFormControlInput1"
+                                placeholder="height=2" />
+                        </div>
+                        <div class="col-2 my-2">
+                            <input
+                                type="number"
+                                class="form-control form-control-sm"
+                                id="exampleFormControlInput1"
+                                placeholder="block=8" />
+                        </div>
+
+                    </div>
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-3 my-2">
+
+                            <input type="button" onclick='selects()'
+                                value="Select" />
+                            <input type="button" onclick='deSelect()'
+                                value="Unselect" />
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 ">
+            <!-- hint -->
+            {% include '_hint.html' %}
+        </div>
+    </div>
+    <!-- button -->
+    <div class="row justify-content-center mt-4 ">
+        <div class="col-2 mt-6">
+            <button type="button"
+                class="btn btn-success btn-lg">Process</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
