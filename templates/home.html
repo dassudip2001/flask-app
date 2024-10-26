@@ -292,11 +292,11 @@
 
                     <div class="row">
                         <div class="col-3 my-2">
+                            <button type="button" onclick='selects()'
+                                class="btn btn-outline-secondary">Select</button>
+                            <button type="button" onclick='deSelect()'
+                                class="btn btn-outline-secondary">Unselect</button>
 
-                            <input type="button" onclick='selects()'
-                                value="Select" />
-                            <input type="button" onclick='deSelect()'
-                                value="Unselect" />
                         </div>
                     </div>
                     <hr>
@@ -316,4 +316,23 @@
         </div>
     </div>
 </div>
+
+<script>
+    // checkbox select
+  function selects(){  
+          var ele=document.getElementsByName('chk');  
+          for(var i=0; i<ele.length; i++){  
+              if(ele[i].type=='checkbox')  
+                  ele[i].checked=true;  
+          }  
+      }  
+      function deSelect(){  
+          var ele=document.getElementsByName('chk');  
+          for(var i=0; i<ele.length; i++){  
+              if(ele[i].type=='checkbox')  
+                  ele[i].checked=false;  
+                
+          }  
+      }
+</script>
 {% endblock %}
