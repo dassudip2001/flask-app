@@ -1,44 +1,57 @@
-{% extends 'base.html' %}
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <div class="container-fluid">
     <!-- row-->
     <div class="row border-bottom">
-        <div class="col-sm-3 ">
+        <div class="col-sm-4">
             <div class="row mt-2">
-                <div class="col-auto">
-                    <label for="inputPassword6" class="col-form-label">
-                        Select An Image:
-                    </label>
+                <div class="col-4">
+                    <label for="selectImage" class="col-form-label">Select
+                        Image:</label>
                 </div>
                 <div class="col-8">
-                    <input class="form-control mt-1" type="file"
-                        id="formFile1" />
+                    <input class="form-control" type="file" id="image-input"
+                        name="selectImage" accept="image/*" multiple>
                 </div>
             </div>
+            <div class="row mt-2">
+                <div class="col-auto">
+                    <div id="image-preview"></div>
+
+                </div>
+
+            </div>
         </div>
-        <div class="col-sm-6 ">
+        <div class="col-sm-5">
             <!-- main -->
             <div class="overflow-auto">
-                <div class="card-body" style="height: 40rem;">
+                <div class="card-body" style="height: 40rem">
                     <div class="row">
                         <div class="col-4 my-2">
                             <div class="form-check">
-                                <input class="form-check-input" name="chk"
-                                    type="checkbox" value id="idGrayscale">
+                                <input
+                                    class="form-check-input"
+                                    name="chk"
+                                    type="checkbox"
+                                    value
+                                    id="idGrayscale" />
                                 <label class="form-check-label"
                                     for="idGrayscale">
                                     Covert to Grayscale
                                 </label>
                             </div>
-
                         </div>
-                        <div class="col-3  my-2">
+                        <div class="col-3 my-2">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox"
-                                    name="chk" value id="idConvartToJpg">
-                                <label class="form-check-label"
-                                    for="flexCheckDefau" id="ConvartToJpg">
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    name="chk"
+                                    value
+                                    id="idConvartToJpg" />
+                                <label
+                                    class="form-check-label"
+                                    for="flexCheckDefau"
+                                    id="ConvartToJpg">
                                     Convart to JPG
                                 </label>
                             </div>
@@ -46,8 +59,12 @@
                         <div class="col-3 my-2">
                             <!--  -->
                             <div class="form-check">
-                                <input class="form-check-input" name="chk"
-                                    type="checkbox" value id="idSplitIntoYcbcr">
+                                <input
+                                    class="form-check-input"
+                                    name="chk"
+                                    type="checkbox"
+                                    value
+                                    id="idSplitIntoYcbcr" />
                                 <label class="form-check-label"
                                     for="idSplitIntoYcbcr">
                                     Split into YCbCr
@@ -55,16 +72,19 @@
                             </div>
                         </div>
                     </div>
-                    <hr>
+                    <hr />
 
                     <div class="row">
                         <div class="col-3 my-2">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox"
-                                    value name="chk" id="idResize">
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    value
+                                    name="chk"
+                                    id="idResize" />
                                 <label class="form-check-label" for="idResize">
-                                    Resize
-                                </label>
+                                    Resize </label>
                             </div>
                         </div>
                         <div class="col-2 my-2">
@@ -82,12 +102,16 @@
                                 placeholder="height=100" />
                         </div>
                     </div>
-                    <hr>
+                    <hr />
                     <div class="row">
                         <div class="col-3 my-2">
                             <div class="form-check">
-                                <input class="form-check-input" name="chk"
-                                    type="checkbox" value id="idRotateImage">
+                                <input
+                                    class="form-check-input"
+                                    name="chk"
+                                    type="checkbox"
+                                    value
+                                    id="idRotateImage" />
                                 <label class="form-check-label"
                                     for="idRotateImage">
                                     Rotate Image
@@ -103,8 +127,12 @@
                         </div>
                         <div class="col-2 my-2">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox"
-                                    value name="chk" id="idClockwise">
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    value
+                                    name="chk"
+                                    id="idClockwise" />
                                 <label class="form-check-label"
                                     for="idClockwise">
                                     Clockwise
@@ -113,8 +141,12 @@
                         </div>
                         <div class="col-2 my-2">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox"
-                                    name="chk" value id="idSameSize">
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    name="chk"
+                                    value
+                                    id="idSameSize" />
                                 <label class="form-check-label"
                                     for="idSameSize">
                                     Same Size
@@ -124,13 +156,16 @@
                         <!-- <div class="col" style="border: 1px solid;">d</div> -->
                     </div>
 
-                    <hr>
+                    <hr />
                     <div class="row">
                         <div class="col-3 my-2">
                             <div class="form-check">
-                                <input class="form-check-input" name="chk"
-                                    type="checkbox" value
-                                    id="idMakeTransparent">
+                                <input
+                                    class="form-check-input"
+                                    name="chk"
+                                    type="checkbox"
+                                    value
+                                    id="idMakeTransparent" />
                                 <label class="form-check-label"
                                     for="idMakeTransparent">
                                     Make Transparent
@@ -158,14 +193,17 @@
                                 id="exampleFormControlInput1"
                                 placeholder="blue=255" />
                         </div>
-
                     </div>
-                    <hr>
+                    <hr />
                     <div class="row">
                         <div class="col-3 my-2">
                             <div class="form-check">
-                                <input class="form-check-input" name="chk"
-                                    type="checkbox" value id="idGaussianBlur">
+                                <input
+                                    class="form-check-input"
+                                    name="chk"
+                                    type="checkbox"
+                                    value
+                                    id="idGaussianBlur" />
                                 <label class="form-check-label"
                                     for="idGaussianBlur">
                                     Gaussian Blur
@@ -179,14 +217,17 @@
                                 id="exampleFormControlInput1"
                                 placeholder="value=1" />
                         </div>
-
                     </div>
-                    <hr>
+                    <hr />
                     <div class="row">
                         <div class="col-3 my-2">
                             <div class="form-check">
-                                <input class="form-check-input" name="chk"
-                                    type="checkbox" value id="idGaussianNoise">
+                                <input
+                                    class="form-check-input"
+                                    name="chk"
+                                    type="checkbox"
+                                    value
+                                    id="idGaussianNoise" />
                                 <label class="form-check-label"
                                     for="idGaussianNoise">
                                     Gaussian Noise
@@ -201,14 +242,18 @@
                                 placeholder="value=1" />
                         </div>
 
-                        <hr>
+                        <hr />
                     </div>
 
                     <div class="row">
                         <div class="col-3 my-2">
                             <div class="form-check">
-                                <input class="form-check-input" name="chk"
-                                    type="checkbox" value id="idSaltAndPepper">
+                                <input
+                                    class="form-check-input"
+                                    name="chk"
+                                    type="checkbox"
+                                    value
+                                    id="idSaltAndPepper" />
                                 <label class="form-check-label"
                                     for="idSaltAndPepper">
                                     Salt And Pepper
@@ -230,13 +275,16 @@
                                 placeholder="pepper=1" />
                         </div>
                     </div>
-                    <hr>
+                    <hr />
                     <div class="row">
                         <div class="col-3 my-2">
                             <div class="form-check">
-                                <input class="form-check-input" name="chk"
-                                    type="checkbox" value
-                                    id="idMedianFiltering">
+                                <input
+                                    class="form-check-input"
+                                    name="chk"
+                                    type="checkbox"
+                                    value
+                                    id="idMedianFiltering" />
                                 <label class="form-check-label"
                                     for="idMedianFiltering">
                                     Median Filtering
@@ -245,8 +293,12 @@
                         </div>
                         <div class="col-4 my-2">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox"
-                                    name="chk" value id="isSplitIntoRgb">
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    name="chk"
+                                    value
+                                    id="isSplitIntoRgb" />
                                 <label class="form-check-label"
                                     for="isSplitIntoRgb">
                                     Split into RGB Channels
@@ -254,17 +306,22 @@
                             </div>
                         </div>
                     </div>
-                    <hr>
+                    <hr />
                     <div class="row">
-                        <div class="col-3 my-2"><div class="form-check">
-                                <input class="form-check-input" name="chk"
-                                    type="checkbox" value
-                                    id="idVectorQuantization">
+                        <div class="col-3 my-2">
+                            <div class="form-check">
+                                <input
+                                    class="form-check-input"
+                                    name="chk"
+                                    type="checkbox"
+                                    value
+                                    id="idVectorQuantization" />
                                 <label class="form-check-label"
                                     for="idVectorQuantization">
                                     Vector Quantization
                                 </label>
-                            </div></div>
+                            </div>
+                        </div>
                         <div class="col-2 my-2">
                             <input
                                 type="number"
@@ -286,30 +343,36 @@
                                 id="exampleFormControlInput1"
                                 placeholder="block=8" />
                         </div>
-
                     </div>
-                    <hr>
+                    <hr />
 
                     <div class="row">
                         <div class="col-3 my-2">
-                            <button type="button" onclick='selects()'
-                                class="btn btn-outline-secondary">Select</button>
-                            <button type="button" onclick='deSelect()'
-                                class="btn btn-outline-secondary">Unselect</button>
-
+                            <button
+                                type="button"
+                                onclick="selects()"
+                                class="btn btn-outline-secondary">
+                                Select
+                            </button>
+                            <button
+                                type="button"
+                                onclick="deSelect()"
+                                class="btn btn-outline-secondary">
+                                Unselect
+                            </button>
                         </div>
                     </div>
-                    <hr>
+                    <hr />
                 </div>
             </div>
         </div>
-        <div class="col-sm-3 ">
+        <div class="col-sm-3">
             <!-- hint -->
             {% include '_hint.html' %}
         </div>
     </div>
     <!-- button -->
-    <div class="row justify-content-center mt-4 ">
+    <div class="row justify-content-center mt-4">
         <div class="col-2 mt-6">
             <button type="button"
                 class="btn btn-success btn-lg">Process</button>
@@ -318,21 +381,38 @@
 </div>
 
 <script>
-    // checkbox select
-  function selects(){  
-          var ele=document.getElementsByName('chk');  
-          for(var i=0; i<ele.length; i++){  
-              if(ele[i].type=='checkbox')  
-                  ele[i].checked=true;  
-          }  
-      }  
-      function deSelect(){  
-          var ele=document.getElementsByName('chk');  
-          for(var i=0; i<ele.length; i++){  
-              if(ele[i].type=='checkbox')  
-                  ele[i].checked=false;  
-                
-          }  
-      }
+  // checkbox select
+  function selects() {
+    var ele = document.getElementsByName("chk");
+    for (var i = 0; i < ele.length; i++) {
+      if (ele[i].type == "checkbox") ele[i].checked = true;
+    }
+  }
+  function deSelect() {
+    var ele = document.getElementsByName("chk");
+    for (var i = 0; i < ele.length; i++) {
+      if (ele[i].type == "checkbox") ele[i].checked = false;
+    }
+  }
+
+
+// image preview
+// Listen for file selection
+document.getElementById('image-input').addEventListener('change', function(event) {
+        const files = event.target.files;  // Get selected files
+        const previewContainer = document.getElementById('image-preview');
+        previewContainer.innerHTML = '';  // Clear any previous previews
+        
+        // Loop through the selected files
+        for (const file of files) {
+            // Create a div or span to display the file name
+            const fileNameElement = document.createElement('div');
+            fileNameElement.textContent = file.name;  // Set text to the file name
+            previewContainer.appendChild(fileNameElement);  // Append the file name to the preview container
+        }
+    });
+    
+
+
 </script>
 {% endblock %}
